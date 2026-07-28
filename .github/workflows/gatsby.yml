@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ლუკა კაკაბაძის IT Support Engineer და Motion Designer პორტფოლიო." />
+  <title>ლუკა კაკაბაძე — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+Georgian:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root { --ink:#19333b; --muted:#61767b; --paper:#fffdf7; --sage:#dce8df; --mint:#bfe5d1; --sun:#ffe09b; --line:rgba(25,51,59,.13); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:"Noto Sans Georgian",sans-serif; }
+    a { color:inherit; text-decoration:none; }
+    .shell { width:min(1160px, calc(100% - 48px)); margin:auto; }
+    nav { height:82px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); }
+    .brand { font:500 14px/1 "DM Mono",monospace; letter-spacing:-.04em; }
+    .brand b { color:#328a67; }
+    .navlinks { display:flex; gap:26px; font-size:13px; font-weight:600; }
+    .navlinks a { opacity:.72; transition:.2s; } .navlinks a:hover { opacity:1; color:#328a67; }
+    .hero { min-height:650px; position:relative; display:grid; grid-template-columns:1.25fr .75fr; gap:50px; align-items:center; overflow:hidden; }
+    .hero:before { content:""; position:absolute; width:450px; height:450px; right:-85px; top:40px; background:var(--sage); border-radius:49% 51% 65% 35% / 34% 43% 57% 66%; transform:rotate(22deg); z-index:-1; }
+    .eyebrow, .section-label { font:500 12px/1 "DM Mono",monospace; letter-spacing:.04em; text-transform:uppercase; color:#378765; }
+    h1 { max-width:700px; margin:18px 0 22px; font-size:clamp(42px,6vw,77px); letter-spacing:-.07em; line-height:1.08; font-weight:800; }
+    h1 em { font-style:normal; color:#378765; }
+    .intro { max-width:560px; color:var(--muted); font-size:17px; line-height:1.75; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+    .button { border:1px solid var(--ink); border-radius:100px; padding:13px 20px; font-size:13px; font-weight:700; transition:.2s; }
+    .button.primary { color:white; background:var(--ink); } .button:hover { transform:translateY(-2px); box-shadow:0 7px 0 rgba(25,51,59,.13); }
+    .profile-card { padding:25px; background:#fff; border:1px solid var(--line); border-radius:24px; box-shadow:14px 14px 0 var(--sun); transform:rotate(2deg); }
+    .status { display:flex; align-items:center; gap:8px; font:500 11px "DM Mono",monospace; color:var(--muted); } .dot { width:9px; height:9px; border-radius:50%; background:#50b57a; }
+    .profile-card h2 { font-size:26px; letter-spacing:-.05em; margin:30px 0 4px; } .profile-card p { margin:0; color:var(--muted); font-size:14px; }
+    .stat-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:28px; }
+    .stat { padding:14px; background:#f4f7f3; border-radius:14px; } .stat strong { display:block; font-size:16px; } .stat span { font-size:11px; color:var(--muted); }
+    section { padding:112px 0; border-top:1px solid var(--line); }
+    .section-head { display:grid; grid-template-columns:.55fr 1.45fr; gap:40px; margin-bottom:52px; } h3 { margin:0; font-size:clamp(30px,4vw,47px); line-height:1.22; letter-spacing:-.06em; }
+    .about-text { margin:12px 0 0; max-width:630px; color:var(--muted); font-size:16px; line-height:1.8; }
+    .experience { display:grid; grid-template-columns:.55fr 1.45fr; gap:40px; }
+    .timeline { border-top:1px solid var(--line); }
+    .role { display:grid; grid-template-columns:170px 1fr; gap:24px; padding:25px 0; border-bottom:1px solid var(--line); }
+    .date { color:var(--muted); font:500 11px/1.55 "DM Mono",monospace; } .role h4 { margin:0; font-size:19px; letter-spacing:-.04em; } .role .company { color:#378765; font-size:13px; font-weight:700; } .role p { margin:9px 0 0; color:var(--muted); font-size:13px; line-height:1.7; }
+    .skills { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; } .skill { padding:22px; background:var(--sage); border-radius:18px; } .skill:nth-child(2) { background:var(--sun); } .skill:nth-child(3) { background:var(--mint); } .skill strong { display:block; margin-bottom:8px; font-size:16px; } .skill span { color:#486065; font-size:12px; line-height:1.6; }
+    .featured { display:grid; grid-template-columns:1.05fr .95fr; gap:0; overflow:hidden; background:#e7eff0; border-radius:26px; border:1px solid var(--line); }
+    .work-image { min-height:440px; background:#345; overflow:hidden; } .work-image img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .6s ease; } .featured:hover img { transform:scale(1.04); }
+    .work-info { padding:48px; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; } .work-info h3 { margin:16px 0; } .work-info p { margin:0; color:var(--muted); line-height:1.75; font-size:14px; }
+    .tags { display:flex; flex-wrap:wrap; gap:8px; margin:24px 0; } .tag { padding:7px 10px; background:#fff; border-radius:100px; font:500 10px "DM Mono",monospace; }
+    footer { padding:55px 0 36px; background:var(--ink); color:white; } .contact { display:flex; justify-content:space-between; align-items:end; gap:30px; } .contact h3 { max-width:530px; } .contact .button { border-color:#fff; } .contact .button.primary { background:var(--mint); border-color:var(--mint); color:var(--ink); } .footer-bottom { display:flex; justify-content:space-between; margin-top:80px; color:#b9ccca; font:500 11px "DM Mono",monospace; }
+    @media (max-width:760px) { .shell{width:min(100% - 32px,1160px)} .navlinks{display:none} .hero,.section-head,.experience,.featured{grid-template-columns:1fr} .hero{padding:80px 0;min-height:auto;gap:42px}.hero:before{width:300px;height:300px;right:-150px;top:30px}.profile-card{max-width:370px}.section-head{gap:17px;margin-bottom:36px} section{padding:74px 0}.role{grid-template-columns:1fr;gap:9px}.skills{grid-template-columns:1fr}.work-image{min-height:300px}.work-info{padding:34px}.contact{display:block}.contact .actions{margin-top:28px}.footer-bottom{margin-top:55px;gap:14px;flex-wrap:wrap} }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="shell">
+      <nav><a class="brand" href="#top">LUKA <b>—</b> KAKABADZE</a><div class="navlinks"><a href="#about">ჩემს შესახებ</a><a href="#experience">გამოცდილება</a><a href="#work">ნამუშევარი</a><a href="#contact">კონტაქტი</a></div></nav>
+      <section class="hero" id="top">
+        <div><div class="eyebrow">IT SUPPORT ENGINEER / MOTION DESIGNER</div><h1>ტექნოლოგია<br />და <em>ვიზუალი</em><br />ერთ სივრცეში.</h1><p class="intro">გამარჯობა, მე ლუკა კაკაბაძე ვარ — IT Support Engineer გამოცდილებითა და მოძრავი გრაფიკის მიმართ განსაკუთრებული ინტერესით.</p><div class="actions"><a class="button primary" href="#contact">დამიკავშირდი</a><a class="button" href="#work">ნამუშევრის ნახვა ↓</a></div></div>
+        <aside class="profile-card"><div class="status"><i class="dot"></i> AVAILABLE FOR NEW OPPORTUNITIES</div><h2>ლუკა კაკაბაძე</h2><p>თბილისი, საქართველო</p><div class="stat-grid"><div class="stat"><strong>3+</strong><span>წელი IT სფეროში</span></div><div class="stat"><strong>B2</strong><span>ინგლისური</span></div><div class="stat"><strong>2021—</strong><span>ილიას უნივერსიტეტი</span></div><div class="stat"><strong>365</strong><span>Microsoft Tools</span></div></div></aside>
+      </section>
+    </div>
+    <section id="about"><div class="shell"><div class="section-head"><span class="section-label">01 / ABOUT</span><div><h3>საიმედო მხარდაჭერა, მკაფიო კომუნიკაცია და ვიზუალური ხედვა.</h3><p class="about-text">ჩემი პროფესიული გამოცდილება აერთიანებს მომხმარებლის ტექნიკურ მხარდაჭერას, სისტემების გამართვასა და ქსელურ ამოცანებს. პარალელურად, Motion Design საშუალებას მაძლევს იდეებს დინამიკური, დასამახსოვრებელი ვიზუალური ფორმა მივცე.</p></div></div><div class="skills"><div class="skill"><strong>IT მხარდაჭერა</strong><span>Hardware, software, ქსელი, მომხმარებლის მხარდაჭერა.</span></div><div class="skill"><strong>Microsoft 365</strong><span>Windows, Office, Teams, ანგარიშები და მოწყობილობები.</span></div><div class="skill"><strong>Motion & Visual</strong><span>ვიზუალური კონცეფციები და მოძრავი გრაფიკა.</span></div></div></div></section>
+    <section id="experience"><div class="shell"><div class="experience"><span class="section-label">02 / EXPERIENCE</span><div><h3>პროფესიული გამოცდილება</h3><div class="timeline"><article class="role"><div class="date">2024 — PRESENT</div><div><h4>IT Support Engineer</h4><div class="company">Medison</div><p>კომპიუტერული ტექნიკის, პროგრამებისა და პერიფერიული მოწყობილობების გამართვა; ტექნიკური პრობლემების დიაგნოსტიკა და IT პროექტებში მონაწილეობა.</p></div></article><article class="role"><div class="date">2023 — 2024</div><div><h4>IT Support</h4><div class="company">Live Support</div><p>Hardware, software და ქსელური საკითხების დროული მოგვარება, remote/on-site მხარდაჭერა და მომხმარებლების საბაზისო ტრენინგი.</p></div></article><article class="role"><div class="date">2022 — 2023</div><div><h4>IT Support</h4><div class="company">Evex</div><p>სამუშაო სადგურების, პრინტერებისა და სკანერების გამართვა; Windows, Office და Teams-ის მხარდაჭერა; helpdesk მოთხოვნების მართვა.</p></div></article><article class="role"><div class="date">2021 — PRESENT</div><div><h4>Business Administration & Management</h4><div class="company">Ilia State University</div><p>ბაკალავრიატი ბიზნეს ადმინისტრირებასა და მენეჯმენტში.</p></div></article></div></div></div></div></section>
+    <section id="work"><div class="shell"><div class="section-head"><span class="section-label">03 / FEATURED WORK</span><div><h3>ვიზუალური მხარე</h3><p class="about-text">ჩემი Behance პორტფოლიოდან შერჩეული გამორჩეული პროექტი.</p></div></div><a class="featured" href="https://www.behance.net/gallery/212411307/_" target="_blank" rel="noreferrer"><div class="work-image"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/9c8bb8212411307.6794e234719be.png" alt="საქართველოს ნაკრები — Behance პროექტი" /></div><div class="work-info"><div class="eyebrow">SELECTED ON BEHANCE</div><h3>საქართველოს ნაკრები</h3><p>სპორტული ვიზუალური პროექტი, რომელიც საქართველოს ნაკრებს ეძღვნება და პორტფოლიოსთვის მკაფიო, ენერგიულ აქცენტს ქმნის.</p><div class="tags"><span class="tag">GRAPHIC DESIGN</span><span class="tag">SPORT</span><span class="tag">CREATIVE</span></div><span class="button primary">იხილე Behance-ზე ↗</span></div></a></div></section>
+  </main>
+  <footer id="contact"><div class="shell"><div class="contact"><div><span class="section-label" style="color:#bfe5d1">04 / CONTACT</span><h3>მზად ვარ ახალი იდეებისა და შესაძლებლობებისთვის.</h3></div><div class="actions"><a class="button primary" href="mailto:lukakakabadze04@gmail.com">ელფოსტის გაგზავნა</a><a class="button" href="tel:+995599887545">+995 599 887 545</a></div></div><div class="footer-bottom"><span>© 2026 LUKA KAKABADZE</span><a href="https://www.behance.net/lukakakabadze3" target="_blank" rel="noreferrer">BEHANCE ↗</a></div></div></footer>
+</body>
+</html>
